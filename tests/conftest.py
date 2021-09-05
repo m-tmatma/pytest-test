@@ -5,4 +5,5 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def target(request):
+	'''specify target IP Address'''
 	return request.config.getoption('--target')

@@ -8,4 +8,9 @@ def test_1():
 
 def test_target(target):
     print(target)
-    assert target == 'hogehoge'
+    #assert target == 'hogehoge'
+
+# content of test_tmpdir.py
+def test_needsfiles(tmpdir):
+    print(tmpdir)
+    #assert 0
