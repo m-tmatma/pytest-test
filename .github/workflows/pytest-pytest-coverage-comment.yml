@@ -6,7 +6,7 @@ on:
 # https://docs.github.com/ja/actions/using-jobs/assigning-permissions-to-jobs
 permissions:
   # `contents` is for permission to the contents of the repository.
-  contents: read
+  contents: write
   # `pull-requests` is for permission to pull request
   pull-requests: write
 
