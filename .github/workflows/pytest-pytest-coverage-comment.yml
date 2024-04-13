@@ -3,8 +3,11 @@ on:
   push:
   pull_request:
 
+# https://docs.github.com/ja/actions/using-jobs/assigning-permissions-to-jobs
 permissions:
-  contents: write
+  # `contents` is for permission to the contents of the repository.
+  contents: read
+  # `pull-requests` is for permission to pull request
   pull-requests: write
 
 jobs:
