@@ -37,3 +37,11 @@ jobs:
       with:
         pytest-xml-coverage-path: ./coverage.xml
         junitxml-path: ./pytest.xml
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: |
+          ./coverage.xml
+          ./pytest.xml
