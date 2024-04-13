@@ -41,32 +41,3 @@ jobs:
         custom-arguments: '-q'
         click-to-expand: true
         report-title: 'Test Report'
-
-    - name: GitHub Action for pytest
-      uses: cclauss/GitHub-Action-for-pytest@0.5.0
-
-    - name: Run tests
-      run: pytest --junit-xml=test-results.xml
-
-    - name: Surface failing tests
-      if: always()
-      uses: pmeier/pytest-results-action@main
-      with:
-        # A list of JUnit XML files, directories containing the former, and wildcard
-        # patterns to process.
-        # See @actions/glob for supported patterns.
-        path: test-results.xml
-
-        # (Optional) Add a summary of the results at the top of the report
-        summary: true
-
-        # (Optional) Select which results should be included in the report.
-        # Follows the same syntax as `pytest -r`
-        display-options: fEX
-
-        # (Optional) Fail the workflow if no JUnit XML was found.
-        fail-on-empty: true
-
-        # (Optional) Title of the test results section in the workflow summary
-        title: Test results
-
