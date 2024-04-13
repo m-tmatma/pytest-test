@@ -3,8 +3,11 @@ on:
   push:
   pull_request:
 
+# https://docs.github.com/ja/actions/using-jobs/assigning-permissions-to-jobs
 permissions:
+  # `contents` is for permission to the contents of the repository.
   contents: write
+  # `pull-requests` is for permission to pull request
   pull-requests: write
 
 jobs:
@@ -34,3 +37,11 @@ jobs:
       with:
         pytest-xml-coverage-path: ./coverage.xml
         junitxml-path: ./pytest.xml
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: |
+          ./coverage.xml
+          ./pytest.xml
