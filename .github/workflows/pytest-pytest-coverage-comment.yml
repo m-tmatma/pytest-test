@@ -38,6 +38,12 @@ jobs:
         pytest-xml-coverage-path: ./coverage.xml
         junitxml-path: ./pytest.xml
 
+    - name: Publish Test Results(Linux)
+      uses: EnricoMi/publish-unit-test-result-action/linux@v2
+      if: runner.os == 'Linux'
+      with:
+        files: |
+          ./pytest.xml
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
