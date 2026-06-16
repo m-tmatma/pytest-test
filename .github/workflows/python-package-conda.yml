@@ -10,4 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-python@v6
+      with:
+          cache: 'pip'
     - uses: jakebailey/pyright-action@v3
